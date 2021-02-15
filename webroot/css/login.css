@@ -1,0 +1,46 @@
+.pic{
+    background-image: url(../img/course-8.jpg);
+    max-width: 100%;
+    height: 670px;
+    background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+	opacity: 0.8;
+
+}
+.picc{
+	background-image: url(../img/chrome.jpg);
+    max-width: 100%;
+    height: 670px;
+    background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+	opacity: 0.8;
+	
+
+}
+	.pd{
+		padding-bottom: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.mrg{
+		margin-top: 220px;
+		margin-right: 40px;
+		margin-right: 40px;
+	}
+	.mrgn{
+		margin-top: 220px;
+	}
+	.bg{
+    background-color:deepskyblue;
+    opacity: 0.9;
+  padding: 10px;
+   
+}
+    .b{
+
+        display: flex;
+}
+	
+	
