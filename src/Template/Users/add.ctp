@@ -54,15 +54,22 @@ table {
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->control('fname');
-            echo $this->Form->control('lname');
+            echo $this->Form->control('fname',array(
+              'label' => 'First Name'));
+            echo $this->Form->control('lname',array(
+              'label' => 'Last Name'));
             echo $this->Form->control('role');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
             echo $this->Form->control('gender');
             echo $this->Form->control('address');
             echo $this->Form->control('phone');
-            echo $this->Form->control('dob');
+           
+            echo $this->Form->control('dob', array(
+              'label' => 'Date of birth', 
+          
+              'minYear' => date('Y') - 170,
+              'maxYear' => date('Y') - 18 ));
             echo $this->Form->control('cnic');
             echo $this->Form->control('qualification');
             echo $this->Form->control('experience');

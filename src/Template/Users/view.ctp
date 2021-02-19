@@ -120,6 +120,10 @@ table {
             <th scope="row"><?= __('Joining') ?></th>
             <td><?= h($user->joining) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('salary') ?></th>
+            <td><?= h($user->salary) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Attendences') ?></h4>

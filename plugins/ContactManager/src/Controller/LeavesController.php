@@ -3,13 +3,7 @@ namespace ContactManager\Controller;
 
 use ContactManager\Controller\AppController;
 
-/**
- * Leaves Controller
- *
- * @property \ContactManager\Model\Table\LeavesTable $Leaves
- *
- * @method \ContactManager\Model\Entity\Leave[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
+
 class LeavesController extends AppController
 {
     public function initialize()
@@ -22,11 +16,7 @@ class LeavesController extends AppController
     $this->Auth->allow(['logout', 'add']);
     
     }
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|null
-     */
+
     public function index()
     {
         $this->paginate = [
@@ -51,13 +41,7 @@ class LeavesController extends AppController
         // Default deny
         return false;
     }
-    /**
-     * View method
-     *
-     * @param string|null $id Leave id.
-     * @return \Cake\Http\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
+
     public function view($id = null)
     {
         $leave = $this->Leaves->get($id, [
@@ -67,11 +51,7 @@ class LeavesController extends AppController
         $this->set('leave', $leave);
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
+
     public function add()
     {  
         $a = $this->request->session()->read('Auth.User.id');
@@ -91,13 +71,7 @@ class LeavesController extends AppController
         $this->set(compact('leave', 'users'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Leave id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
+
     public function edit($id = null)
     {
         $leave = $this->Leaves->get($id, [
@@ -116,13 +90,7 @@ class LeavesController extends AppController
         $this->set(compact('leave', 'users'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Leave id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
+
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);

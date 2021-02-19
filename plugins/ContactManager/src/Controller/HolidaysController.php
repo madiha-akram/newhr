@@ -57,6 +57,7 @@ class HolidaysController extends AppController
      */
     public function add()
     {
+        $this->request->allowMethod([]);
         $holiday = $this->Holidays->newEntity();
         if ($this->request->is('post')) {
             $holiday = $this->Holidays->patchEntity($holiday, $this->request->getData());
@@ -79,6 +80,7 @@ class HolidaysController extends AppController
      */
     public function edit($id = null)
     {
+        $this->request->allowMethod([]);
         $holiday = $this->Holidays->get($id, [
             'contain' => [],
         ]);

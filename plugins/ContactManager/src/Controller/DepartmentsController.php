@@ -17,7 +17,7 @@ class DepartmentsController extends AppController
     parent::initialize();
     $this->loadComponent('Flash'); // Include the FlashComponent
     // Auth component allow visitors to access add action to register and access logout action
-    $this->Auth->allow(['logout', 'add']);
+    $this->Auth->allow(['logout']);
     
     }
     public function isAuthorized($user)
@@ -65,6 +65,7 @@ class DepartmentsController extends AppController
      */
     public function add()
     {
+        $this->request->allowMethod([]);
         $department = $this->Departments->newEntity();
         if ($this->request->is('post')) {
             $department = $this->Departments->patchEntity($department, $this->request->getData());
@@ -87,6 +88,7 @@ class DepartmentsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->request->allowMethod([]);
         $department = $this->Departments->get($id, [
             'contain' => [],
         ]);

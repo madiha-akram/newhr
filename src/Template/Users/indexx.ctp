@@ -5,7 +5,7 @@
  */
 ?>
 
-<?= "test" ?>
+
 
 
 <!DOCTYPE html>

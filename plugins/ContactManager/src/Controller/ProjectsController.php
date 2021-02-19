@@ -73,6 +73,7 @@ class ProjectsController extends AppController
      */
     public function add()
     {
+        $this->request->allowMethod([]);
         $project = $this->Projects->newEntity();
         if ($this->request->is('post')) {
             $project = $this->Projects->patchEntity($project, $this->request->getData());
@@ -96,6 +97,7 @@ class ProjectsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->request->allowMethod([]);
         $project = $this->Projects->get($id, [
             'contain' => [],
         ]);

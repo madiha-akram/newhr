@@ -31,13 +31,13 @@ table {
 
 </nav>
 <div class="leaves index large-9 medium-8 columns content">
-    <h3><?= __('Leaves Details') ?></h3>
+    <h3><?= __('Leave Details') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('reason') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fromm') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('from') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('until') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -47,11 +47,13 @@ table {
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($leaves as $leave): ?>
+            <?php foreach ($leaves as $leave):
+               // print_r($leave);exit; ?>
             <tr>
+            
                 <td><?= $this->Number->format($leave->id) ?></td>
                 <td><?= h($leave->reason) ?></td>
-                <td><?= h($leave->Fromm) ?></td>
+                <td><?= h($leave->fromm) ?></td>
                 <td><?= h($leave->until) ?></td>
                 <td><?= h($leave->status) ?></td>
                 <td><?= h($leave->created) ?></td>

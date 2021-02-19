@@ -17,6 +17,9 @@ class AttendencesController extends AppController
         $attendences = $this->paginate($this->Attendences);
        // $total = $attendences->find('all')->where(['status' => 0])->count();
         //echo $total;
+        //$attendences = $this->Attendences->find('all')->where(['user_id'=>$a]);
+        $sal = $this->request->session()->read('Auth.User.salary');
+        echo $sal;
 
         $this->set(compact('attendences'));
     }

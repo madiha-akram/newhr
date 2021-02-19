@@ -10,7 +10,6 @@ class AttendencesController extends AppController
     {
     parent::initialize();
     $this->loadModel('Users');
-
     $this->loadComponent('Flash'); // Include the FlashComponent
     // Auth component allow visitors to access add action to register and access logout action
     $this->Auth->allow(['logout', 'add']);
@@ -26,6 +25,7 @@ class AttendencesController extends AppController
         // Default deny
         return false;
     }
+
 
     public function index()
     {
@@ -57,15 +57,16 @@ class AttendencesController extends AppController
 
         $this->set('attendence', $attendence);
     }
+
+
     public function salaryy(){
+        
         $this->paginate = [
             'contain' => ['Users'],
         ];
         $a = $this->request->session()->read('Auth.User.id');
-   // $sal = $this->request->session()->read('Auth.User.salary');
-     //   echo $sal;
-     
-       
+        $sal = $this->request->session()->read('Auth.User.salary');
+        echo $sal;
         echo " user id";
         echo  $a;
         $attendences = $this->Attendences->find('all')->where(['user_id'=>$a]);
@@ -75,16 +76,8 @@ class AttendencesController extends AppController
        //it can display count of users whose status is 0
         $query = $this->Attendences->find('all', array('conditions'=>array('status'=>0,'user_id'=>$a)));
         $number = $query->count();
-        echo "off from work:";
-        echo $sal;
-        echo  $number ;
-        $t = 22000;
-        $ss= $t/30 *$number;
-        $t = $t -$ss;
-        //echo $t;
-        $this->set(compact('attendences','t'));
-
-        
+    
+        $this->set(compact('sal','a','number'));
     }
 
     public function add()

@@ -29,7 +29,7 @@ table {
 
 </nav>
 <div class="projects index large-9 medium-8 columns content">
-    <h3><?= __('Projects') ?></h3>
+    <h3><?= __('Project Detail') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

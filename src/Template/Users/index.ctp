@@ -1,13 +1,3 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
- */
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +25,13 @@
   color: white;
   
 }
+.btnn{
+  background-color:lightgreen;
+  width:60px;
+  height:30px;
+  padding:5px;
+
+}
     
     /* Set black background color, white text and some padding */
     footer {
@@ -51,11 +48,6 @@
       }
       .row.content {height: auto;} 
     }
-
-
-
-
-
    
 table, td, th {
   border: 1px solid lightblue;
@@ -78,7 +70,7 @@ table {
                      </h4>
                       
                       
-                   <li>   <?= $this->Html->link(__('Dashboard'), ['controller' => 'Admin','action' => 'index']) ?></li>
+                    <li><?= $this->Html->link(__('Dashboard'), ['controller' => 'Admin','action' => 'index']) ?></li>
                     <li> <?= $this->Html->link(__('List Employee'), ['controller' => 'Users','action' => 'index']) ?></li>
                     <li> <?= $this->Html->link(__('List Departments'), ['controller' => 'Departments', 'action' => 'index']) ?></li>
                     
@@ -160,7 +152,7 @@ table {
                 
                 
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?><br>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?><br>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?><br>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                 </td>
